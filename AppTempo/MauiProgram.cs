@@ -1,52 +1,27 @@
-﻿using Microsoft.Extensions.Logging;
+﻿// 1. Correção do arquivo MauiProgram.cs (que está com a classe errada)
+// Arquivo: AppTempo/MauiProgram.cs
+using Microsoft.Extensions.Logging;
 
-namespace Weather_App
+namespace AppTempo
 {
-    public partial class MainPage : ContentPage
+    public static class MauiProgram
     {
-        public MainPage()
+        public static MauiApp CreateMauiApp()
         {
-            InitializeComponent();
-        }
-
-        private async Task searchButton_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(cityEntry.Text))
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
                 {
-                    Weather? weather = await DataService.GetWeather(cityEntry.Text);
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                });
 
-                    if (weather != null)
-                    {
-                        string? weatherData = "";
+#if DEBUG
+    		builder.Logging.AddDebug();
+#endif
 
-                        weatherData = $"Latitude: {weather.Latitude}\n" +
-                                      $"Longitude: {weather.Longitude}\n" +
-                                      $"Temperature: {weather.Temperature}°C\n" +
-                                      $"Max Temperature: {weather.MaxTemperature}°C\n" +
-                                      $"Min Temperature: {weather.MinTemperature}%\n" +
-                                      $"Main: {weather.Main} hPa\n" +
-                                      $"Description: {weather.Description} m/s\n" +
-                                      $"Sunrise: {weather.Sunrise}\n" +
-                                      $"Sunset: {weather.Sunset}\n" +
-                                      $"Visibility: {weather.Visibility}\n" +
-                                      $"Wind Speed: {weather.WindSpeed} m/s\n";
-                    }
-                    else
-                    {
-                        responseLabel.Text = "No forecast data.";
-                    }
-                }
-                else
-                {
-                    responseLabel.Text = "Please enter a city name.";
-                }
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Error", ex.Message, "OK");
-            }
+            return builder.Build();
         }
     }
 }
