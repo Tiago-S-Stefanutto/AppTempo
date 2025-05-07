@@ -1,71 +1,75 @@
-AppTempo - Aplicativo de Previsão do Tempo
+# AppTempo - Aplicativo de Previsão do Tempo
+
 AppTempo é uma aplicação móvel desenvolvida com .NET MAUI (Multi-platform App UI) que permite aos usuários consultar informações meteorológicas atuais de diferentes cidades ao redor do mundo.
-Funcionalidades
 
-Consulta de dados meteorológicos em tempo real
-Pesquisa por nome de cidade
-Apresentação de dados detalhados como:
+## Funcionalidades
 
-Temperatura atual, máxima e mínima
-Descrição do clima
-Horários de nascer e pôr do sol
-Velocidade do vento
-Coordenadas geográficas
-Visibilidade
+- Consulta de dados meteorológicos em tempo real
+- Pesquisa por nome de cidade
+- Apresentação de dados detalhados como:
+  - Temperatura atual, máxima e mínima
+  - Descrição do clima
+  - Horários de nascer e pôr do sol
+  - Velocidade do vento
+  - Coordenadas geográficas
+  - Visibilidade
 
+## Tecnologias Utilizadas
 
+- .NET MAUI (Multi-platform App UI)
+- C# / XAML
+- API OpenWeatherMap
+- Newtonsoft.Json para processamento de dados JSON
 
-Tecnologias Utilizadas
+## Plataformas Suportadas
 
-.NET MAUI (Multi-platform App UI)
-C# / XAML
-API OpenWeatherMap
-Newtonsoft.Json para processamento de dados JSON
+- Android
+- iOS
+- Windows
+- MacOS (via Catalyst)
 
-Plataformas Suportadas
+## Requisitos
 
-Android
-iOS
-Windows
-MacOS (via Catalyst)
+- Visual Studio 2022 com suporte a .NET MAUI
+- .NET 9.0
+- Chave de API do OpenWeatherMap
 
-Requisitos
+## Como Começar
 
-Visual Studio 2022 com suporte a .NET MAUI
-.NET 9.0
-Chave de API do OpenWeatherMap
+1. Clone o repositório:
+   ```
+   git clone https://github.com/Tiago-S-Stefanutto/AppTempo.git
+   ```
 
-Como Começar
+2. Abra a solução (`AppTempo.sln`) no Visual Studio 2022
 
-Clone o repositório:
-git clone https://github.com/Tiago-S-Stefanutto/AppTempo.git
+3. No arquivo `Services/DataServices.cs`, substitua o texto "Your OpenWeather api key" pela sua chave de API do OpenWeatherMap
 
-Abra a solução (AppTempo.sln) no Visual Studio 2022
-No arquivo Services/DataServices.cs, substitua o texto "Your OpenWeather api key" pela sua chave de API do OpenWeatherMap
-Compile e execute o aplicativo em seu dispositivo ou emulador preferido
+4. Compile e execute o aplicativo em seu dispositivo ou emulador preferido
 
-Como Usar
+## Como Usar
 
-Inicie o aplicativo
-Digite o nome da cidade desejada no campo de entrada
-Clique no botão "Search"
-Os dados meteorológicos serão exibidos na tela
+1. Inicie o aplicativo
+2. Digite o nome da cidade desejada no campo de entrada
+3. Clique no botão "Search"
+4. Os dados meteorológicos serão exibidos na tela
 
-Estrutura do Projeto
+## Estrutura do Projeto
 
-AppTempo: Projeto principal
+- **AppTempo**: Projeto principal
+  - **Models**: Classes de modelo de dados
+  - **Services**: Serviços para consumo de APIs
+  - **Platforms**: Código específico para cada plataforma
 
-Models: Classes de modelo de dados
-Services: Serviços para consumo de APIs
-Platforms: Código específico para cada plataforma
+## Licença
 
+[MIT License](LICENSE)
 
+## Autor
 
-Licença
-MIT License
-Autor
 Tiago S. Stefanutto
-Agradecimentos
 
-OpenWeatherMap pela disponibilização da API
-Equipe de desenvolvimento do .NET MAUI
+## Agradecimentos
+
+- OpenWeatherMap pela disponibilização da API
+- Equipe de desenvolvimento do .NET MAUI
