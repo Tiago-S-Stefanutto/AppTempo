@@ -1,6 +1,5 @@
-﻿// 2. Correção do MainPage.xaml.cs
-// Arquivo: AppTempo/MainPage.xaml.cs
-using AppTempo.Models;
+﻿using AppTempo.Models;
+using AppTempo.Services;
 
 namespace AppTempo
 {
