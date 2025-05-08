@@ -1,8 +1,5 @@
-﻿// 3. Correção do DataServices.cs
-// Arquivo: AppTempo/Services/DataServices.cs
-using AppTempo.Models;
+﻿using AppTempo.Models;
 using Newtonsoft.Json.Linq;
-using System;
 
 namespace AppTempo.Services
 {
